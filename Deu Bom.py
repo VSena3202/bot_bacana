@@ -1,12 +1,10 @@
-#importações
 import discord
 import asyncio
 
-#variaveis especiais
 client = discord.Client()
 
 
-#Comandos basicos para o bot iniciar e funcionar
+#Comandos para o biniciar.
 @client.event
 async def on_ready():
     print(f'Bot {client.user.name} online\nHello world!')
@@ -14,14 +12,12 @@ async def on_ready():
     await client.change_presence(activity=discord.Streaming(name='Eita', url='https://twitch.tv/Kl3t1n'))
 
 
-
+#Comandos de mensagem.
 @client.event
 async def on_message(message):
     if message.content.startswith('$'):
         mention = message.author.mention
         await message.channel.send(f'Bodia {mention}')
-
-
 
 
 #Comando para colocar o Token Do Bot
